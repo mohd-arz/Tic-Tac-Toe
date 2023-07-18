@@ -1,0 +1,228 @@
+html{
+    height: 100vh;
+    width: 100vw;
+}
+body{
+    height: 100vh;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: #3a342b;
+
+    
+    /* Background image */
+    background-image: url(./tic-tac-toe-img.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container Styles */
+
+.container{
+    /* width: 600px; */
+    width: min(600px,100%);
+    margin: auto;
+    /* height: 95%; */
+    flex: 1;
+    position: relative;
+}
+
+/* Count Container */
+
+.count-container{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.count > span{
+    display: inline-block;
+    padding-top: .5rem;
+    font-size: 2rem;
+
+}
+.draws{
+    padding-top: .2rem;
+}
+
+
+/* Main Container */
+
+.main-container{
+    margin: auto;
+    padding: 2rem;
+
+    /* Grid */
+    display: grid;
+    width: calc(125px * 3);
+    grid-template-columns: repeat(3,125px);
+    grid-template-rows: repeat(3,125px);
+
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, .2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4.3px);
+    -webkit-backdrop-filter: blur(4.3px);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    overflow: hidden;
+}
+
+/* Grids inside  */
+
+.main-container > div{
+    font-size: 6rem;
+    font-weight: 300;
+    color: #3a342b;
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* Strike lines. */
+
+.negative45::after, 
+.positive45::after,
+.vertical::after,
+.horizontal::after{
+    content: '';
+    position: absolute;
+    border-top:2px solid #191612;
+
+}
+
+.negative45::after{
+    width:525px;
+    transform: rotate(45deg);
+    transform-origin: 0% 0%;
+
+    top:2rem;
+    left:2rem;
+      
+}
+.positive45::after{
+    width: 525px;
+    transform: rotate(-45deg);
+    transform-origin:100%;
+    left: -7.5rem;
+    top:2rem;
+  
+}
+
+.main-container > .vertical::after{
+    width: 200px;
+    transform: rotate(90deg);
+    transform-origin: 0% 0%;
+    left: 50%;
+    top: 0;
+}
+
+.main-container > .horizontal::after{
+    width: 200px;
+    transform-origin: 0% 0%;
+    top: 50%;
+    left: 0;
+}
+
+
+/* Buttons */
+
+.restart > span{
+    text-align: center;
+    font-size: 2rem;
+    padding: 0;
+    display: inline-block;
+    color:#3a342b;
+
+}
+.restart{
+    border-radius: 50%;
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+}
+.mode-toggle{
+    border: none;
+    padding:.6rem 1.5rem;
+    margin-top: 0;
+    font-size: 1rem;
+    vertical-align: bottom;
+    margin-left: 5vh;
+}
+
+button{
+    background-color: #c3af8f;
+    color:#3a342b;
+    border-radius: 6px;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+}
+button:hover{
+    transform: scale(1.1);
+}
+
+
+/* X color */
+.main-container > .x{
+    color:#625848;
+}
+
+/* Grid borders. */
+
+.main-container > [data-column='0'][data-row='1'],
+.main-container > [data-column='0'][data-row='0'],
+.main-container > [data-column='0'][data-row='2']
+{
+    border-right: solid 2px black;
+}
+
+
+.main-container > [data-column='1'][data-row='0'],
+.main-container > [data-column='0'][data-row='0'],
+.main-container > [data-column='2'][data-row='0']
+{
+    border-bottom: solid 2px black;
+}
+
+.main-container > [data-column='2'][data-row='1'],
+.main-container > [data-column='2'][data-row='0'],
+.main-container > [data-column='2'][data-row='2']
+{
+    border-left: solid 2px black;
+}
+
+.main-container > [data-column='1'][data-row='2'],
+.main-container > [data-column='0'][data-row='2'],
+.main-container > [data-column='2'][data-row='2']
+{
+    border-top: solid 2px black;
+}
+
+
+/* footer section */
+.author{
+    color: rgb(237, 226, 205);
+    width: 100%;
+    height: 5%;
+    background-color: #081419;
+}
+.author{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5%;
+}
+.author > a{
+    text-decoration: none;
+    color:white;
+    margin-left: .5%;
+ }

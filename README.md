@@ -1,4 +1,4 @@
-# Tic-Tac-Toe
+# [Tic-Tac-Toe](https://mohd-arz.github.io/Tic-Tac-Toe/)
 
 #### This Project was created only with vanilla HTML CSS JS , right after i learned about Factory Functions and Modules.
 
